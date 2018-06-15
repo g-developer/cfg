@@ -1,7 +1,7 @@
 package main
 
 import (
-	cfg "cfg"
+	cfg "github.com/g-developer/cfg"
 	"fmt"
 )
 

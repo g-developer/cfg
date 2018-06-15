@@ -1,7 +1,7 @@
 package cfg
 
 import (
-	util "cfg/util"
+	util "github.com/g-developer/cfg/util"
 	"errors"
 	"strconv"
 	"strings"
