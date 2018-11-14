@@ -19,8 +19,18 @@ func load(filename string) error {
 	i := 0
 	for {
 		line, err := rd.ReadString('\n') //以'\n'为结束符读入一行
-		if err != nil || io.EOF == err {
-			break
+		if err != nil {
+			if io.EOF == err {
+				if 0 < len(line) {
+					err = Scan(i, line)
+					if nil != err {
+						return err
+					}
+					i++
+				}
+			} else {
+				panic(err)
+			}
 		}
 		err = Scan(i, line)
 		if nil != err {
