@@ -27,16 +27,19 @@ func load(filename string) error {
 						return err
 					}
 					i++
+				} else {
+					break
 				}
 			} else {
 				panic(err)
 			}
+		} else {
+			err = Scan(i, line)
+			if nil != err {
+				return err
+			}
+			i++
 		}
-		err = Scan(i, line)
-		if nil != err {
-			return err
-		}
-		i++
 	}
 	return nil
 }
